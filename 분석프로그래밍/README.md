@@ -3,7 +3,7 @@
 - 팀 인원 : 3명
 - 성과 : 프로젝트 평가 1위  
 
-<img src='https://user-images.githubusercontent.com/86222332/209897284-c2b4f746-f271-47cc-9566-24e5b8d2634a.png' width='200' height'400'/>
+<img src="https://user-images.githubusercontent.com/86222332/209897284-c2b4f746-f271-47cc-9566-24e5b8d2634a.png" width="200" height="400"/>
 
 [목적] : 구매 행태 데이터를 기반으로 실버세대의 라이프 스타일을 이해할 수 있는 특징을 분석 및 추정하고 이와 관련된 마케팅 전략을 제시한다.  
 
