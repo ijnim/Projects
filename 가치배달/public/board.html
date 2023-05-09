@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>가치배달 게시판</title>
+  <link rel="stylesheet" href="./css/board.css">
+</head>
+<body>
+  <h1>가치배달 게시판</h1>
+  <!-- 글쓰기 버튼 -->
+  <button id="write-btn">글쓰기</button>
+  <!-- 글쓰기 폼 -->
+  <form id="write-form">
+    <input type="text" name="title" placeholder="제목">
+    <textarea name="content" placeholder="내용"></textarea>
+    <input type="file" name="image">
+    <button type="submit">작성</button>
+  </form>
+  <hr>
+  <ul id="post-list">
+  </ul>
+
+  <script>
+    const writeBtn = document.querySelector('#write-btn');
+    const writeForm = document.querySelector('#write-form');
+    const postList = document.querySelector('#post-list');
+    
+    // 글쓰기 버튼 클릭 시 글쓰기 폼 나타냄
+    writeBtn.addEventListener('click', () => {
+      writeForm.style.display = 'block';
+    });
+    
+    // 글쓰기 폼 제출 시 게시물 생성
+    writeForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      
+      // 입력된 제목, 내용, 이미지 가져오기
+      const title = writeForm.elements.title.value;
+      const content = writeForm.elements.content.value;
+      const image = writeForm.elements.image.files[0];
+      
+      // FileReader를 사용해 이미지를 Data URL로 변환
+      const reader = new FileReader();
+      reader.readAsDataURL(image);
+      
+      reader.onload = () => {
+        // 게시물 HTML 생성
+        const postHtml = `
+          <li>
+            <h2>${title}</h2>
+            <p>${content}</p>
+            <img src="${reader.result}">
+            <form class="comment-form">
+              <input type="text" name="comment" placeholder="댓글을 입력하세요">
+              <button type="submit">작성</button>
+            </form>
+            <ul class="comment-list"></ul>
+          </li>
+        `;
+        
+        // 게시물 목록에 추가
+        postList.innerHTML += postHtml;
+        
+        // 입력 폼 초기화
+        writeForm.reset();
+        
+        // 글쓰기 폼 숨김
+        writeForm.style.display = 'none';
+        
+        // 댓글 폼 제출 시 댓글 생성
+        const commentForms = document.querySelectorAll('.comment-form');
+        commentForms.forEach((form) => {
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            // 입력된 댓글 가져오기
+            const comment = form.elements.comment.value;
+            
+            // 댓글 HTML 생성
+            const commentHtml = `
+              <li>${comment}</li>
+            `;
+            
+            // 댓글 목록에 추가
+            const commentList = form.nextElementSibling;
+            commentList.innerHTML += commentHtml;
+            
+            // 입력 폼 초기화
+            form.reset();
+          });
+        });
+      };
+    });
+  </script>
+</body>
+</html
