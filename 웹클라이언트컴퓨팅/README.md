@@ -22,10 +22,15 @@
   `npm install`  
   `npm start`  
   `node app.js`  
-5. 웹브라우저에서 'http://localhost:9999' 로 접속
+5. 웹브라우저에서 'http://localhost:9999' 로 접속  
+
+![image](https://github.com/ijnim/Projects/assets/86222332/3ce212a7-970c-46bf-ba3d-ec08a8418fba)
 
 ### 주요 기능
 - 회원가입
 - 가치배달 게시판 & 이모저모 게시판
   - 글쓰기로 게시글 업로드(제목, 내용, 사진업로드)
   - 게시글에 댓글 작성
+![image](https://github.com/ijnim/Projects/assets/86222332/ae81ee75-fb3f-4db4-b69b-72023d000a40)
+![image](https://github.com/ijnim/Projects/assets/86222332/73719a09-d912-448c-b520-b02f6546dd5b)
+
