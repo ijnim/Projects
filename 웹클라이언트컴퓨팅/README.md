@@ -18,10 +18,10 @@
 1. MySQL 설치
 2. MySQL 에 **'User'** DB 생성 후, **'user'** 테이블 생성
 3. app.js 파일에서 MySQL 연동
-4. 프로젝트 디렉토리로 이동 후
-  `npm install`
-  `npm start`
-  `node app.js`
+4. 프로젝트 디렉토리로 이동 후  
+  `npm install`  
+  `npm start`  
+  `node app.js`  
 5. 웹브라우저에서 'http://localhost:9999' 로 접속
 
 ### 주요 기능
